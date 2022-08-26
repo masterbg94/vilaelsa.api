@@ -193,6 +193,18 @@ class ApartmentServices implements IApartmentServices
 
     }
 
+    function getPremisesByBuilding($buildingId)
+    {
+        $this->apartments = $this->apartmentRepository->getPremisesByBuilding($buildingId);
+        // Paginate result
+        $totalItems = count($this->apartments);
+
+        return [
+            'total' => $totalItems,
+            'data' => $this->apartments
+        ];
+    }
+
     function getAllByType($typeId)
     {
         return $this->apartmentRepository->getAllByType($typeId);

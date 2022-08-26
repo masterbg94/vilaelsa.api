@@ -37,6 +37,7 @@ Route::get('/apartments', 'ApartmentController@getAll');
 Route::get('/apartments/random', 'ApartmentController@apartmentsRandom');
 Route::get('/apartments/{id}', 'ApartmentController@getById');
 Route::get('/buildings/{buildingId}/apartments', 'ApartmentController@getAllByBuilding');
+Route::get('/buildings/{buildingId}/premises', 'ApartmentController@getPremisesByBuilding');
 Route::get('/types/{typeId}/apartments', 'ApartmentController@getAllByType');
 Route::get('/floors/{floorId}/apartments', 'ApartmentController@getAllByFloor');
 

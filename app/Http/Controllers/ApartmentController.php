@@ -58,6 +58,11 @@ class ApartmentController
         return response()->json($this->apartmentService->getAllByBuilding($buildingId, $filter, $pager),200);
     }
 
+    function getPremisesByBuilding($buildingId){
+
+        return response()->json($this->apartmentService->getPremisesByBuilding($buildingId),200);
+    }
+
     function getAllByType($typeId){
         return response()->json($this->apartmentService->getAllByType($typeId),200);
     }

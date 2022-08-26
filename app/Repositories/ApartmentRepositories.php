@@ -32,7 +32,12 @@ class ApartmentRepositories implements IApartmentRepositories
 
     function getAllByBuilding($buildingId)
     {
-        return $this->model->where([['buildingId' ,'=', $buildingId],['apartmentNumber' ,'!=', null]])->get();
+        return $this->model->where([['buildingId' ,'=', $buildingId],['apartmentNumber' ,'!=', 0]])->get();
+    }
+
+    function getPremisesByBuilding($buildingId)
+    {
+        return $this->model->where([['buildingId' ,'=', $buildingId],['apartmentNumber' ,'==', 0]])->get();
     }
 
     function getAllByType($typeId)
