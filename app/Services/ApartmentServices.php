@@ -224,7 +224,7 @@ class ApartmentServices implements IApartmentServices
         $numberOfRandomItems = 6;
         $allApartments = $this
             ->apartmentRepository
-            ->getAll()
+            ->getAllWithoutPremises()
             ->toArray();
 
         for ($i = 0; $i < count($allApartments); $i++) {

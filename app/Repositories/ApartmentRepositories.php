@@ -25,6 +25,11 @@ class ApartmentRepositories implements IApartmentRepositories
         return $this->model->all();
     }
 
+    function getAllWithoutPremises()
+    {
+        return $this->model->where('apartmentNumber' ,'!=', 0)->get();
+    }
+
     function getById($id)
     {
         return $this->model->find($id);
